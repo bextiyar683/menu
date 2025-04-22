@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>Azərbaycan Mətbəxi Menyusu</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .menu-item {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      width: 220px;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 16px rgba(0,0,0,0.2);
+    }
+
+    .menu-item img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 15px;
+    }
+
+    .menu-item h3 {
+      color: #222;
+      margin: 10px 0 5px;
+    }
+
+    .menu-item strong {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #e63946;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      color: #333;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍽️ Azərbaycan Mətbəxi Menyusu</h1>
+
+  <div class="menu-container">
+    <!-- Yemək 1 -->
+    <div class="menu-item" onclick="openModal('Plov', 'https://images.unsplash.com/photo-1606755962773-593a3fa5973c?auto=format&fit=crop&w=600&q=60', 'Düyü, ət, quru meyvələr, zəfəran.')">
+      <img src="https://images.unsplash.com/photo-1606755962773-593a3fa5973c?auto=format&fit=crop&w=600&q=60" alt="Plov">
+      <h3>Plov</h3>
+      <strong>12 AZN</strong>
+    </div>
+
+    <!-- Yemək 2 -->
+    <div class="menu-item" onclick="openModal('Düşbərə', 'https://images.unsplash.com/photo-1625949571267-4dfdc7cb6805?auto=format&fit=crop&w=600&q=60', 'Xırda xəmir cibikləri, qiymə, ədviyyatlar.')">
+      <img src="https://images.unsplash.com/photo-1625949571267-4dfdc7cb6805?auto=format&fit=crop&w=600&q=60" alt="Düşbərə">
+      <h3>Düşbərə</h3>
+      <strong>8 AZN</strong>
+    </div>
+
+    <!-- Yemək 3 -->
+    <div class="menu-item" onclick="openModal('Dolma', 'https://images.unsplash.com/photo-1601924638867-3ec62b90c0ae?auto=format&fit=crop&w=600&q=60', 'Üzüm yarpağında qiymə və düyü qarışığı.')">
+      <img src="https://images.unsplash.com/photo-1601924638867-3ec62b90c0ae?auto=format&fit=crop&w=600&q=60" alt="Dolma">
+      <h3>Dolma</h3>
+      <strong>10 AZN</strong>
+    </div>
+
+    <!-- Yemək 4 -->
+    <div class="menu-item" onclick="openModal('Ləvəngi', 'https://images.unsplash.com/photo-1578861094626-7ab7c14f5c1f?auto=format&fit=crop&w=600&q=60', 'Toyuq və ya balıq içində qoz, soğan, alça.')">
+      <img src="https://images.unsplash.com/photo-1578861094626-7ab7c14f5c1f?auto=format&fit=crop&w=600&q=60" alt="Ləvəngi">
+      <h3>Ləvəngi</h3>
+      <strong>14 AZN</strong>
+    </div>
+
+    <!-- Yemək 5 -->
+    <div class="menu-item" onclick="openModal('Qutab', 'https://images.unsplash.com/photo-1608471579475-0e475fb2b478?auto=format&fit=crop&w=600&q=60', 'Xəmir içində ət, göyərti və ya pendir.')">
+      <img src="https://images.unsplash.com/photo-1608471579475-0e475fb2b478?auto=format&fit=crop&w=600&q=60" alt="Qutab">
+      <h3>Qutab</h3>
+      <strong>6 AZN</strong>
+    </div>
+
+    <!-- Buraya əlavə 20 yemək əlavə ediləcək -->
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="">
+     
+::contentReference[oaicite:0]{index=0}
+ 
